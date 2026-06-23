@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Reserve a Hotel</title>
+</head>
+<body>
+    <h2>Reseave a Hotel:</h2>
+    <form>
+        <input type="text" list="hotels" required>
+        <datalist id="hotels">
+            <option value="โคราชคันทรีคลับ">
+            <option value="โคราชรีสอร์ท">
+            <option value="สุรสัมมนาคาร">
+            <option value="สุรนารีวิลล์">
+            <option value="สีมาธานี">
+        </datalist>
+        <br>
+
+        Check-in: <input type="date" required>
+        Nights: <input type="number" min="1" max="30" value="3" required><br>
+        Rooms: <input type="number" min="1" max="9" value="2" required>
+        Adults per room: <input type="number" min="1" max="2" value="1" required>
+        Children per room: <input type="number" min="0" max="2" value="2" required><br>
+        Price per room: <input type="text" value="2100"><br>
+        Total Price: <input type="text" value="12600"><br>
+
+        <br>
+        <input type="submit" value="ยืนยันแล้วบ่">
+    </form>
+
+</body>
+</html>

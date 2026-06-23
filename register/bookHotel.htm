@@ -5,9 +5,14 @@
     <title>Reserve a Hotel</title>
 </head>
 <body>
-    <h2>Reseave a Hotel:</h2>
-    <form>
-        <input type="text" list="hotels" required>
+
+ <h2>Reserve a Hotel:</h2>
+    <form oninput="
+        pricePerRoom.value = 1500 + (+c.value * 300);
+        totalPrice.value = +r.value * +n.value * (1500 + (+c.value * 300));
+     ">
+        <label for="hotel-choice">Choose a Hotel: </label>
+        <input type="text" id="hotel-choice" list="hotels" required>
         <datalist id="hotels">
             <option value="โคราชคันทรีคลับ">
             <option value="โคราชรีสอร์ท">
@@ -15,18 +20,19 @@
             <option value="สุรนารีวิลล์">
             <option value="สีมาธานี">
         </datalist>
-        <br>
+        <br><br>
 
-        Check-in: <input type="date" required>
-        Nights: <input type="number" min="1" max="30" value="3" required><br>
-        Rooms: <input type="number" min="1" max="9" value="2" required>
-        Adults per room: <input type="number" min="1" max="2" value="1" required>
-        Children per room: <input type="number" min="0" max="2" value="2" required><br>
-        Price per room: <input type="text" value="2100"><br>
-        Total Price: <input type="text" value="12600"><br>
+        Check-in: <input type="date" name="Check-in" required> 
+        Nights: <input type="number" name="n" min="1" max="30" value="3" required><br><br>
+        
+        Rooms: <input type="number" name="r" min="1" max="9" value="2" required> 
+        Adults per room: <input type="number" name="a" min="1" max="2" value="1" required> 
+        Children per room: <input type="number" name="c" min="0" max="2" value="2" required><br><br>
+        
+        <strong>Price per room:</strong> <output name="pricePerRoom">0</output> Baht<br><br>
+        <strong>Total Price:</strong> <output name="totalPrice">0</output> Baht<br><br>
 
-        <br>
-        <input type="submit" value="ยืนยันแล้วบ่">
+        <input type="submit" value="Reserve">
     </form>
 
 </body>
